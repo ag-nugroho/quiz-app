@@ -34,7 +34,6 @@ const Login = ({ onLogin }) => {
   );
 };
 
-// Main Quiz Component
 const App = () => {
   const [user, setUser] = useState(null);
   const [questions, setQuestions] = useState([]);
@@ -50,7 +49,6 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Fetch questions from Open Trivia DB
   const fetchQuestions = useCallback(async () => {
     setIsLoading(true);
     setError(null);
@@ -70,7 +68,6 @@ const App = () => {
         }));
         setQuestions(processedQuestions);
         
-        // Save to localStorage
         localStorage.setItem('quizQuestions', JSON.stringify(processedQuestions));
       } else {
         throw new Error('No questions found');
@@ -83,7 +80,6 @@ const App = () => {
     }
   }, []);
 
-  // Timer and quiz logic
   useEffect(() => {
     if (quizStarted && timeRemaining > 0 && !quizFinished) {
       const timer = setTimeout(() => {
@@ -99,7 +95,6 @@ const App = () => {
   }, [quizStarted, timeRemaining, quizFinished]);
 
   const handleAnswer = (selectedAnswer) => {
-    // Tambahkan pengecekan untuk memastikan pertanyaan ada
     if (!questions[currentQuestionIndex]) return;
 
     const currentQuestion = questions[currentQuestionIndex];
@@ -118,7 +113,6 @@ const App = () => {
       }));
     }
 
-    // Pindah ke pertanyaan berikutnya
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(prev => prev + 1);
     } else {
@@ -136,19 +130,16 @@ const App = () => {
     setQuizStarted(true);
   };
 
-  // Format waktu
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
   };
 
-  // Render login page
   if (!user) {
     return <Login onLogin={setUser} />;
   }
 
-  // Render results page
   if (quizFinished) {
     return (
       <div className="quiz-container">
@@ -163,6 +154,9 @@ const App = () => {
               <div className="result-incorrect">
                 <span className="xmark">✗</span>
                 <span>Salah: {score.incorrect}</span>
+              </div>
+              <div className='result-total'>
+                <span>Total Soal: {score.total}</span>
               </div>
             </div>
             <button 
@@ -183,7 +177,6 @@ const App = () => {
     );
   }
 
-  // Render error loading questions
   if (error) {
     return (
       <div className="quiz-container">
@@ -201,7 +194,6 @@ const App = () => {
     );
   }
 
-  // Render loading state
   if (isLoading) {
     return (
       <div className="quiz-container">
@@ -212,7 +204,6 @@ const App = () => {
     );
   }
 
-  // Render start quiz page
   if (!quizStarted || questions.length === 0) {
     return (
       <div className="quiz-container">
@@ -229,7 +220,6 @@ const App = () => {
     );
   }
 
-  // Pastikan ada pertanyaan sebelum merender
   const currentQuestion = questions[currentQuestionIndex];
   if (!currentQuestion) {
     return (
@@ -248,7 +238,6 @@ const App = () => {
     );
   }
 
-  // Render active quiz page
   return (
     <div className="quiz-container">
       <div className="quiz-card">
