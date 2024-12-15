@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.quiz-container, .login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background: #fff;
+  animation: fadeIn 0.5s ease;
+}
+
+.quiz-title, .login-title {
+  font-size: 24px;
+  text-align: center;
+  color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.login-input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background: #4a90e2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #357abd;
+}
+
+.timer {
+  text-align: right;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.answer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.answer-button {
+  padding: 10px;
+  font-size: 14px;
+  background: #f5f7fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.answer-button:hover {
+  background: #4a90e2;
+  color: white;
+}
+
+.result-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.result-correct, .result-incorrect {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.result-correct {
+  color: #4caf50;
+}
+
+.result-incorrect {
+  color: #f44336;
+}
+
+/* Reset input background dan placeholder */
+.login-input {
+  background-color: #ffffff; /* Putih */
+  color: #333; /* Warna teks utama */
+  border: 1px solid #ddd; /* Tambahkan border yang lebih jelas */
+  border-radius: 8px;
+}
+
+.login-input::placeholder {
+  color: #aaa; /* Warna placeholder abu-abu */
+  opacity: 1; /* Untuk memastikan warna terlihat */
+}
+
+.login-input:focus {
+  background-color: #ffffff; /* Pastikan warna tetap putih saat focus */
+  outline: none;
+  border-color: #4a90e2; /* Warna border saat focus */
+}
+
+/* Tombol jawaban */
+.answer-button {
+  background-color: #f5f5f5; /* Warna background abu-abu terang */
+  color: #333; /* Warna teks gelap */
+  border: 1px solid #ddd; /* Border halus */
+  font-weight: 500; /* Tebal teks sedang */
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.answer-button:hover {
+  background-color: #4a90e2; /* Warna biru saat hover */
+  color: #fff; /* Teks putih saat hover */
+}
+
+.answer-button:disabled {
+  background-color: #e0e0e0; /* Warna abu-abu terang */
+  color: #bbb; /* Warna teks redup */
+  cursor: not-allowed;
+  opacity: 1; /* Pastikan tidak ada opacity yang meredupkan teks */
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
