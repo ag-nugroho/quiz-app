@@ -26,6 +26,12 @@ body {
   margin-bottom: 20px;
 }
 
+.quiz-description {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .login-input {
   width: 100%;
   padding: 10px;
@@ -112,31 +118,30 @@ button:hover {
   color: #f44336;
 }
 
-/* Reset input background dan placeholder */
 .login-input {
-  background-color: #ffffff; /* Putih */
-  color: #333; /* Warna teks utama */
-  border: 1px solid #ddd; /* Tambahkan border yang lebih jelas */
+  background-color: #ffffff;
+  color: #333; 
+  border: 1px solid #ddd;
   border-radius: 8px;
 }
 
 .login-input::placeholder {
-  color: #aaa; /* Warna placeholder abu-abu */
-  opacity: 1; /* Untuk memastikan warna terlihat */
+  color: #aaa;
+  opacity: 1;
 }
 
 .login-input:focus {
-  background-color: #ffffff; /* Pastikan warna tetap putih saat focus */
+  background-color: #ffffff;
   outline: none;
-  border-color: #4a90e2; /* Warna border saat focus */
+  border-color: #4a90e2;
 }
 
 /* Tombol jawaban */
 .answer-button {
-  background-color: #f5f5f5; /* Warna background abu-abu terang */
-  color: #333; /* Warna teks gelap */
-  border: 1px solid #ddd; /* Border halus */
-  font-weight: 500; /* Tebal teks sedang */
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  font-weight: 500;
   padding: 10px;
   border-radius: 8px;
   text-align: center;
@@ -145,15 +150,15 @@ button:hover {
 }
 
 .answer-button:hover {
-  background-color: #4a90e2; /* Warna biru saat hover */
-  color: #fff; /* Teks putih saat hover */
+  background-color: #4a90e2;
+  color: #fff;
 }
 
 .answer-button:disabled {
-  background-color: #e0e0e0; /* Warna abu-abu terang */
-  color: #bbb; /* Warna teks redup */
+  background-color: #e0e0e0;
+  color: #bbb;
   cursor: not-allowed;
-  opacity: 1; /* Pastikan tidak ada opacity yang meredupkan teks */
+  opacity: 1;
 }
 
 

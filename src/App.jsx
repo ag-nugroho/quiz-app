@@ -54,7 +54,7 @@ const App = () => {
     setError(null);
     try {
       const response = await fetch(
-        'https://opentdb.com/api.php?amount=10&type=multiple'
+        'https://opentdb.com/api.php?amount=10&category=27&difficulty=easy&type=multiple'
       );
       const data = await response.json();
       
@@ -206,9 +206,10 @@ const App = () => {
 
   if (!quizStarted || questions.length === 0) {
     return (
-      <div className="quiz-container">
-        <div className="quiz-card">
-          <h2 className="quiz-title">Siap Memulai Quiz?</h2>
+      <div className="quiz-container start-background">
+        <div className="quiz-card start-card animate-slide-in">
+          <h2 className="quiz-title">Selamat Datang, {user}!</h2>
+          <p className="quiz-description">Siap untuk mengasah pengetahuanmu?</p>
           <button 
             onClick={startQuiz} 
             className="start-button"
